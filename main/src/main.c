@@ -8,6 +8,7 @@
  *      INCLUDES
  *********************/
 #define _DEFAULT_SOURCE /* needed for usleep() */
+#include "SDL.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
