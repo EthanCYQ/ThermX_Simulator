@@ -70,9 +70,13 @@ int main(int argc, char **argv)
   lv_init();
 
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
+#if 0
   hal_init(480, 272);
 
   lv_demo_widgets();
+#else
+  hal_init(320, 172);
+#endif
 
   while(1) {
     /* Periodically call the lv_task handler.
