@@ -1,6 +1,4 @@
 
-
 void pm_init(void);
-void pm_register_page(void);
-void pm_unregister_page(void);
+bool pm_register_page(page_t *page);
 void pm_switch_page(char *page_name);

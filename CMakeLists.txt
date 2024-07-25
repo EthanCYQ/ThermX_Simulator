@@ -24,7 +24,12 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-add_executable(main main/src/main.c main/src/mouse_cursor_icon.c)
+include_directories(app/page/ app/page/page_startup/)
+include_directories(app/page_manager/)
+
+add_executable(main main/src/main.c main/src/mouse_cursor_icon.c
+                    app/page/page_startup/page_startup.c
+                    app/page_manager/page_manager.c)
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)

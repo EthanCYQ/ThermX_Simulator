@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <malloc.h>
 
 typedef enum {
     PAGE_STATE_IDLE = 0,

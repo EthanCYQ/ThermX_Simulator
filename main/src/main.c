@@ -61,6 +61,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h);
  *   GLOBAL FUNCTIONS
  **********************/
 
+
 int main(int argc, char **argv)
 {
   (void)argc; /*Unused*/
