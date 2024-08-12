@@ -77,6 +77,7 @@ int main(int argc, char **argv)
   lv_demo_widgets();
 #else
   hal_init(320, 172);
+
 #endif
 
   while(1) {
