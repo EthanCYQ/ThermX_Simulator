@@ -27,9 +27,13 @@ target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS
 include_directories(app/page/ app/page/page_startup/)
 include_directories(app/page_manager/)
 
+file(GLOB FONT_SRC_FILES source/font/*.c)
+
 add_executable(main main/src/main.c main/src/mouse_cursor_icon.c
+                    app/page/page.c
                     app/page/page_startup/page_startup.c
-                    app/page_manager/page_manager.c)
+                    app/page_manager/page_manager.c
+                    ${FONT_SRC_FILES})
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)

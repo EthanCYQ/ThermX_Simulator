@@ -15,6 +15,7 @@
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
+#include "page.h"
 
 /*********************
  *      DEFINES
@@ -77,7 +78,8 @@ int main(int argc, char **argv)
   lv_demo_widgets();
 #else
   hal_init(320, 172);
-
+  page_style_init();
+  page_status_bar_init();
 #endif
 
   while(1) {
